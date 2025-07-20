@@ -56,18 +56,18 @@ export const Toolbar: FC<ToolbarProps> = ({
   return (
     <Card className="w-80 h-full flex flex-col shadow-lg rounded-none border-l-0 border-r">
       <CardHeader>
-        <CardTitle>Tools</CardTitle>
+        <CardTitle>Ferramentas</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow overflow-y-auto space-y-6">
         <div className="space-y-2">
-          <h3 className="font-semibold text-muted-foreground">Add Elements</h3>
+          <h3 className="font-semibold text-muted-foreground">Adicionar Elementos</h3>
           <div className="grid grid-cols-2 gap-2">
             <Button variant="outline" onClick={onAddText}>
-              <Type className="mr-2 h-4 w-4" /> Text
+              <Type className="mr-2 h-4 w-4" /> Texto
             </Button>
             <Button variant="outline" asChild>
               <Label>
-                <ImagePlus className="mr-2 h-4 w-4" /> Image
+                <ImagePlus className="mr-2 h-4 w-4" /> Imagem
                 <Input
                   type="file"
                   className="hidden"
@@ -82,7 +82,7 @@ export const Toolbar: FC<ToolbarProps> = ({
         <Separator />
 
         <div className="space-y-2">
-          <h3 className="font-semibold text-muted-foreground">Canvas Tools</h3>
+          <h3 className="font-semibold text-muted-foreground">Ferramentas da Tela</h3>
           <div className="grid grid-cols-2 gap-2">
             <Button
               variant="outline"
@@ -90,7 +90,7 @@ export const Toolbar: FC<ToolbarProps> = ({
                 updateBaseImage({ rotate: (baseImage.transform.rotate + 90) % 360 })
               }
             >
-              <RotateCw className="mr-2 h-4 w-4" /> Rotate
+              <RotateCw className="mr-2 h-4 w-4" /> Girar
             </Button>
             <Button
               variant="outline"
@@ -98,7 +98,7 @@ export const Toolbar: FC<ToolbarProps> = ({
                 updateBaseImage({ scaleX: baseImage.transform.scaleX * -1 })
               }
             >
-              <FlipHorizontal className="mr-2 h-4 w-4" /> Flip
+              <FlipHorizontal className="mr-2 h-4 w-4" /> Inverter
             </Button>
           </div>
         </div>
@@ -109,7 +109,7 @@ export const Toolbar: FC<ToolbarProps> = ({
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <h3 className="font-semibold text-muted-foreground">
-                Edit Element
+                Editar Elemento
               </h3>
               <Button
                 variant="ghost"
@@ -123,7 +123,7 @@ export const Toolbar: FC<ToolbarProps> = ({
             {selectedTextElement && (
               <div className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="text-content">Text</Label>
+                  <Label htmlFor="text-content">Texto</Label>
                   <Textarea
                     id="text-content"
                     value={selectedTextElement.text}
@@ -133,7 +133,7 @@ export const Toolbar: FC<ToolbarProps> = ({
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="font-size">Font Size</Label>
+                  <Label htmlFor="font-size">Tamanho da Fonte</Label>
                   <Input
                     id="font-size"
                     type="number"
@@ -146,7 +146,7 @@ export const Toolbar: FC<ToolbarProps> = ({
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="color">Color</Label>
+                  <Label htmlFor="color">Cor</Label>
                   <Input
                     id="color"
                     type="color"
@@ -161,7 +161,7 @@ export const Toolbar: FC<ToolbarProps> = ({
             )}
             {selectedElement.type === "image" && (
                <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">Image selected. More editing options coming soon.</p>
+                <p className="text-sm text-muted-foreground">Imagem selecionada. Mais opções de edição em breve.</p>
                </div>
             )}
           </div>
@@ -170,7 +170,7 @@ export const Toolbar: FC<ToolbarProps> = ({
 
       <div className="p-4 border-t">
         <Button className="w-full" onClick={onDownload}>
-          <Download className="mr-2 h-4 w-4" /> Download Image
+          <Download className="mr-2 h-4 w-4" /> Baixar Imagem
         </Button>
       </div>
     </Card>

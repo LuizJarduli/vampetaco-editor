@@ -113,7 +113,7 @@ const EditableElement: React.FC<EditableElementProps> = ({ element, isSelected, 
             {element.type === 'image' && (
                 <Image
                     src={element.src}
-                    alt="Overlay"
+                    alt="Sobrecamada"
                     width={element.width}
                     height={element.height}
                     className="pointer-events-none"

@@ -14,7 +14,7 @@ export function ProtestCanvasEditor() {
   const { toast } = useToast();
   const [baseImage, setBaseImage] = useState<BaseImage>({
     src: `https://placehold.co/${BASE_IMAGE_WIDTH}x${BASE_IMAGE_HEIGHT}.png`,
-    alt: "A placeholder image for the canvas background",
+    alt: "Uma imagem de placeholder para o fundo da tela",
     transform: {
       rotate: 0,
       scaleX: 1,
@@ -39,7 +39,7 @@ export function ProtestCanvasEditor() {
     const newTextElement: TextElement = {
       id: crypto.randomUUID(),
       type: "text",
-      text: "Your Text Here",
+      text: "Seu Texto Aqui",
       x: 50,
       y: 50,
       color: "#000000",
@@ -89,7 +89,7 @@ export function ProtestCanvasEditor() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     
-    toast({ title: "Generating image...", description: "Please wait a moment." });
+    toast({ title: "Gerando imagem...", description: "Por favor, aguarde um momento." });
 
     canvas.width = baseImage.originalWidth;
     canvas.height = baseImage.originalHeight;
@@ -138,13 +138,13 @@ export function ProtestCanvasEditor() {
         }
 
         const link = document.createElement("a");
-        link.download = "protest-canvas.png";
+        link.download = "tela-de-protesto.png";
         link.href = canvas.toDataURL("image/png");
         link.click();
-        toast({ title: "Success!", description: "Your image has been downloaded." });
+        toast({ title: "Sucesso!", description: "Sua imagem foi baixada." });
     };
     baseImg.onerror = () => {
-        toast({ variant: 'destructive', title: "Error", description: "Could not load the base image for download." });
+        toast({ variant: 'destructive', title: "Erro", description: "Não foi possível carregar a imagem de base para download." });
     };
     baseImg.src = baseImage.src;
   };
@@ -156,7 +156,7 @@ export function ProtestCanvasEditor() {
       <header className="flex items-center px-4 h-14 border-b shrink-0">
         <Logo className="h-6 w-6 text-primary" />
         <h1 className="ml-4 text-xl font-semibold tracking-tight">
-          Protest Canvas
+          Tela de Protesto
         </h1>
       </header>
       <div className="flex flex-1 min-h-0">
