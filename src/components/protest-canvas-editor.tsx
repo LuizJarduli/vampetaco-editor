@@ -13,7 +13,7 @@ const BASE_IMAGE_HEIGHT = 600;
 export function ProtestCanvasEditor() {
   const { toast } = useToast();
   const [baseImage, setBaseImage] = useState<BaseImage>({
-    src: `https://placehold.co/800x600.png`,
+    src: `https://pbs.twimg.com/media/EViVPxjWAAUAPfU.jpg:large`,
     alt: "Uma imagem de placeholder para o fundo da tela",
     transform: {
       rotate: 0,
